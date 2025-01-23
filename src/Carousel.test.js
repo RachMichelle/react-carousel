@@ -72,8 +72,7 @@ it('does not let you move beyond the length of the array', () => {
     />
   );
 
-  const leftArrow = container.querySelector("bi bi-arrow-left-circle");
-  const rightArrow = container.querySelector("bi bi-arrow-right-circle");
+  const leftArrow = container.querySelector(".bi-arrow-left-circle");
 
   // expect the first image to show with no left arrow
   expect(
@@ -82,10 +81,11 @@ it('does not let you move beyond the length of the array', () => {
   expect(leftArrow).not.toBeInTheDocument();
 
   // move forward twice to get to third(last) image
+  const rightArrow = container.querySelector(".bi-arrow-right-circle");
   fireEvent.click(rightArrow);
   fireEvent.click(rightArrow);
 
-    // expect the third image to show with no right arrow
+  //   // expect the third image to show with no right arrow
     expect(
       container.querySelector('img[alt="testing image 3"]')
     ).toBeInTheDocument();
